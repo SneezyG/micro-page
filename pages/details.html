@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+         body {
+            background-color: rgb(246, 250, 255);
+            color: rgb(51, 51, 50);
+            letter-spacing: 0.9px;
+            word-spacing: 0.9px;
+            line-height: 24px;
+            font-size: 18px;
+         }
+
+         header {
+            margin-bottom: 40px;
+         }
+
+         h2, .items-header {
+            color: rgb(54, 46, 1);
+         }
+
+         .icon-img {
+            width: 30px;
+            position: relative;
+            top: 5px;
+         }
+
+         main {
+            margin-bottom: 200px;
+         }
+
+        .head-cont {
+            height: 130px;
+            width: 70%;
+            background: url("/asset/micro.webp") no-repeat center;
+            background-size: cover;
+            border-radius: 10px;
+            margin: auto;
+            color: rgb(238, 237, 237);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .head-cont > b.single {
+            font-size: 50px
+        }
+
+        header > ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        header > ul li {
+            display: inline-block;
+            padding: 0 30px;
+            margin-top: 10px;
+        }
+
+        .project {
+            padding: 0 50px;
+        }
+
+        .project .inner-items {
+            margin-top: 10px;
+        }
+
+        .project .inner-items > li {
+            margin-bottom: 7px;
+        }
+
+        .project .outer-item {
+            margin-bottom: 15px;
+        }
+
+        main > hr {
+            margin: 50px 0 40px 0;
+        }
+
+        .active-link {
+            padding: 5px 20px;
+            border-radius: 6px;
+            color: white;
+            background-color: rgb(13, 122, 165);
+        }
+
+        .api {
+            background-color: rgb(214, 226, 233);
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid rgb(218, 231, 233);
+            text-align: left;
+            word-break: break-word;
+            min-width: 80px;
+        }
+
+        th {
+            background-color: rgb(3, 127, 165);
+            color: white;
+        }
+
+        span.permit {
+            font-size: 16px;
+            text-decoration: underline;
+        }
+
+        .service {
+            margin-top: 30px;
+        }
+
+
+
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .head-cont {
+                width: 100%;
+            }
+
+            .head-cont > b {
+                font-size: 20px;
+            }
+
+            .head-cont > b.single {
+                font-size: 40px;
+            }
+
+            .project {
+                padding: 0 20px;
+            }
+
+            header > ul > li {
+                padding: 0 15px;
+            }
+
+            span.permit {
+                font-size: 15px;
+            }
+        }
+        
+
+        </style>
+
+        <link rel="icon" type="image/png" href="/asset/micro-icon.webp">
+        <title>The Micro Project</title>
+
+    </head>
+
+    <body>
+
+        <header>
+            <div class="head-cont">
+            </div>
+            <ul>
+                <li><a class="active-link" href="/pages/details.html" title="See core features, API endpoints, data model and more">Details</a></li>
+                <li><a href="/index.html" title="Go to home page">Home</a></li>
+                <li><a href="/pages/video.html" title="See the application in action">Video</a></li>
+                <li><a href="/pages/demo.html" title="See source code">Code</a></li>
+            </ul>
+            <hr>
+        </header>
+
+        <main>
+            <section class="project">
+                <h2>
+                    <img class="icon-img" src="/asset/micro-icon.webp"/>
+                    Architecture Overview
+                </h2>
+                <ul>
+                    <li class="outer-item">
+                        <b class="items-header">Style:</b>
+                        Microservices using Service-Oriented Architecture (SOA).
+                    </li>  
+                    <li class="outer-item">
+                        <b class="items-header">Services:</b>
+                        3 isolated services with individual codebases and MongoDB instances.
+                    </li>
+                    <li class="outer-item">
+                        <b class="items-header">Communication:</b>
+                        Event-driven architecture (message broker).
+                    </li> 
+                    <li class="outer-item">
+                        <b class="items-header">Message Broker:</b>
+                        RabbitMQ (default), easily swappable with Kafka or NATS.
+                    </li>
+                    <li class="outer-item">
+                        <b class="items-header">Deployment:</b>
+                        Docker Compose
+                    </li>                    
+                </ul>
+            </section>
+
+            <hr>
+
+            <section class="project">
+                <h2>
+                    <img class="icon-img" src="/asset/micro-icon.webp"/>
+                    Microservices
+                </h2>
+                <ul>
+                    <li class="service">
+                        <h3>User Service</h3>
+                        <ul>
+                            <li class="outer-item">
+                                <b class="items-header">Framework:</b>
+                                Express.js
+                            </li>
+                            <li class="outer-item">
+                                <b class="items-header">Responsibilities:</b>
+                                Manage user data
+                            </li>
+                            <li class="outer-item">
+                                <b class="items-header">MongoDB Collection:</b>
+                                <span class="api">USERS</span>
+                            </li>      
+                            <li class="outer-item"><b class="items-header">API Endpoints:</b>
+                                <ul class="inner-items">
+                                    <li><span class="api">POST /users</span> – Register a new user</li>
+                                    <li><span class="api">GET /users/{id}</span> – Fetch user details</li>                                    
+                                </ul>
+                            </li>
+                            <li class="outer-item"><b class="items-header">Event Handling:</b>
+                                <ul class="inner-items">
+                                    <li>Consumes: <span class="api">LoanCreated</span> – update user loanHistory, bookHistory and currentBooks .</li>
+                                    <li>Consumes: <span class="api">LoanReturned</span> – update currentBooks.</li>                                    
+                                </ul>
+                            </li>          
+                        </ul>      
+                    </li>
+                    <li class="service">
+                        <h3>Book Service</h3>
+                        <ul>
+                            <li class="outer-item">
+                                <b class="items-header">Framework:</b>
+                                Fastify
+                            </li>
+                            <li class="outer-item">
+                                <b class="items-header">Responsibilities:</b>
+                                Manage books and availability
+                            </li>
+                            <li class="outer-item">
+                                <b class="items-header">MongoDB Collection:</b>
+                                <span class="api">BOOKS</span>
+                            </li>      
+                            <li class="outer-item"><b class="items-header">API Endpoints:</b>
+                                <ul class="inner-items">
+                                    <li><span class="api">POST /books</span> – Add a new book</li>
+                                    <li><span class="api">GET /books/{id}</span> – Fetch book details</li>                                    
+                                </ul>
+                            </li>
+                            <li class="outer-item"><b class="items-header">Event Handling:</b>
+                                <ul class="inner-items">
+                                    <li>Consumes: <span class="api">LoanCreated</span> – mark book as unavailable, update currentHolder and currentLoan.</li>
+                                    <li>Consumes: <span class="api">LoanReturned</span> – mark book as available, set currentHolder and currentLoan to None.</li>                                    
+                                </ul>
+                            </li>          
+                        </ul>      
+                    </li>
+                    <li class="service">
+                        <h3>Loan Service</h3>
+                        <ul>
+                            <li class="outer-item">
+                                <b class="items-header">Framework:</b>
+                                Koa
+                            </li>
+                            <li class="outer-item">
+                                <b class="items-header">Responsibilities:</b>
+                                Manage loan transactions
+                            </li>
+                            <li class="outer-item">
+                                <b class="items-header">MongoDB Collection:</b>
+                                <span class="api">LOANS</span>
+                            </li>      
+                            <li class="outer-item"><b class="items-header">API Endpoints:</b>
+                                <ul class="inner-items">
+                                    <li><span class="api">POST /loans</span> – Register a new user</li>
+                                    <li><span class="api">GET /loans/{id}/return</span> – Fetch user details</li>                                    
+                                </ul>
+                            </li>
+                            <li class="outer-item"><b class="items-header">Event Handling:</b>
+                                <ul class="inner-items">
+                                    <li>Publishes: <span class="api">LoanCreated</span> – (userId, bookId, loanId)</li>
+                                    <li>Publishes: <span class="api">LoanReturned</span> – (userId, bookId, loanId)</li>                                    
+                                </ul>
+                            </li>          
+                        </ul>      
+                    </li>    
+                </ul>
+            </section>
+
+            <hr>
+
+            <section class="project">
+                <h2>
+                    <img class="icon-img" src="/asset/micro-icon.webp"/>
+                    Data Model
+                </h2>
+                <ul>
+                    <li class="outer-item"><b class="items-header">USERS:</b>
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Field</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>id</td>
+                                <td>ObjectId (PK)</td>
+                                <td>Unique user ID</td>
+                              </tr>
+                              <tr>
+                                <td>name</td>
+                                <td>String</td>
+                                <td>Full name of the user</td>
+                              </tr>
+                              <tr>
+                                <td>email</td>
+                                <td>String (Unique)</td>
+                                <td>User's email address</td>
+                              </tr>
+                              <tr>
+                                <td>joinedAt</td>
+                                <td>Date</td>
+                                <td>Timestamp of user registration</td>
+                              </tr>
+                              <tr>
+                                <td>currentBooks</td>
+                                <td>Array of Strings</td>
+                                <td>ID list of all active loaned books associated with a user (if any)</td>
+                              </tr>
+                              <tr>
+                                <td>loanHistory</td>
+                                <td>Array of Strings</td>
+                                <td>ID list of all loans associated with a user (if any)</td>
+                              </tr>
+                              <tr>
+                                <td>bookHistory</td>
+                                <td>Array of Strings</td>
+                                <td>ID list of all books ever loaned to a user (if any)</td>
+                              </tr>
+                              <tr>
+                                <td>status</td>
+                                <td>Enum</td>
+                                <td>User account status (active, suspended)</td>
+                              </tr>
+                            </tbody>
+                        </table>                          
+                    </li>  
+                    <li class="outer-item"><b class="items-header">BOOKS:</b>
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Field</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>id</td>
+                                <td>ObjectId (PK)</td>
+                                <td>Unique book ID</td>
+                              </tr>
+                              <tr>
+                                <td>title</td>
+                                <td>String</td>
+                                <td>Title of the book</td>
+                              </tr>
+                              <tr>
+                                <td>author</td>
+                                <td>String</td>
+                                <td>Author name</td>
+                              </tr>
+                              <tr>
+                                <td>isbn</td>
+                                <td>String (Unique)</td>
+                                <td>International Standard Book Number</td>
+                              </tr>
+                              <tr>
+                                <td>available</td>
+                                <td>Boolean</td>
+                                <td>Indicates if the book is currently available</td>
+                              </tr>
+                              <tr>
+                                <td>currentLoan</td>
+                                <td>String</td>
+                                <td>ID of the current active loan associated with a book (if any)</td>
+                              </tr>
+                              <tr>
+                                <td>currentHolder</td>
+                                <td>String</td>
+                                <td>ID of the user the book was currently loaned out to (if any)</td>
+                              </tr>
+                              <tr>
+                                <td>tags</td>
+                                <td>Array of Strings</td>
+                                <td>Genres or category labels</td>
+                              </tr>
+                              <tr>
+                                <td>addedAt</td>
+                                <td>Date</td>
+                                <td>Date the book was added to the system</td>
+                              </tr>
+                            </tbody>
+                        </table>                          
+                    </li>
+                    <li class="outer-item"><b class="items-header">LOANS:</b>
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Field</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>_id</td>
+                                <td>ObjectId (PK)</td>
+                                <td>Unique loan ID</td>
+                              </tr>
+                              <tr>
+                                <td>userId</td>
+                                <td>String (FK)</td>
+                                <td>References the ID of a user</td>
+                              </tr>
+                              <tr>
+                                <td>bookId</td>
+                                <td>String (FK)</td>
+                                <td>References the ID of a book</td>
+                              </tr>
+                              <tr>
+                                <td>loanedAt</td>
+                                <td>Date</td>
+                                <td>Date the loan was initiated</td>
+                              </tr>
+                              <tr>
+                                <td>dueDate</td>
+                                <td>Date</td>
+                                <td>Deadline for returning the book</td>
+                              </tr>
+                              <tr>
+                                <td>returnedAt</td>
+                                <td>Date (Nullable)</td>
+                                <td>Date the book was returned</td>
+                              </tr>
+                              <tr>
+                                <td>status</td>
+                                <td>String</td>
+                                <td>Loan status (active, returned, overdue)</td>
+                              </tr>
+                            </tbody>
+                        </table>                          
+                    </li>                                     
+                </ul>
+            </section>
+
+            <hr>
+            
+            <section class="project">
+                <h2>
+                    <img class="icon-img" src="/asset/micro-icon.webp"/>
+                    Infrastructure
+                </h2>
+                <ul>
+                    <li class="outer-item"><b class="items-header">Message Broker: RabbitMQ:</b>
+                        <ul class="inner-items">
+                            <li>Services communicate via a central broker.</li>
+                            <li>Each service subscribes to a queue/topic.</li>
+                            <li>Events are JSON-based messages.</li>
+                        </ul>
+                    </li> 
+                    <li class="outer-item"><b class="items-header">Deployment:</b>
+                        <ul class="inner-items">
+                            <li>Docker compose setup with user-service, book-service, 
+                                loan-service, three MongoDB containers, RabbitMQ container.</li>
+                        </ul>
+                    </li>                                                   
+                </ul>
+            </section>
+            
+        </main>
+
+
+
+
+    </body>
+</html>
