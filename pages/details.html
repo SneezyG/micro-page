@@ -191,8 +191,12 @@
                     </li>  
                     <li class="outer-item">
                         <b class="items-header">Services:</b>
-                        3 isolated services with individual codebases and MongoDB instances.
+                        3 isolated services with individual codebases, connected to seperate MongoDB instances.
                     </li>
+                    <li class="outer-item">
+                        <b class="items-header">Containerization:</b>
+                        Docker.
+                    </li> 
                     <li class="outer-item">
                         <b class="items-header">Communication:</b>
                         Event-driven architecture (message broker).
@@ -200,10 +204,10 @@
                     <li class="outer-item">
                         <b class="items-header">Message Broker:</b>
                         RabbitMQ (default), easily swappable with Kafka or NATS.
-                    </li>
+                    </li>    
                     <li class="outer-item">
                         <b class="items-header">Deployment:</b>
-                        Docker Compose
+                        Docker Compose.
                     </li>                    
                 </ul>
             </section>
@@ -404,12 +408,12 @@
                               </tr>
                               <tr>
                                 <td>currentLoan</td>
-                                <td>String</td>
+                                <td>String (Nullable)</td>
                                 <td>ID of the current active loan associated with a book (if any)</td>
                               </tr>
                               <tr>
                                 <td>currentHolder</td>
-                                <td>String</td>
+                                <td>String (Nullable)</td>
                                 <td>ID of the user the book was currently loaned out to (if any)</td>
                               </tr>
                               <tr>
